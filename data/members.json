@@ -1,0 +1,228 @@
+[
+  {
+    "category": "幹事",
+    "nameJa": "上田 潤",
+    "nameEn": "Jun Ueda",
+    "affiliation": "Department of Neuroscience, Northwestern University",
+    "description": "京都大学大学院医学研究科臨床神経学講座にて学位を取得し、2023年10月よりNorthwestern University, Department of Neuroscienceに所属しております。パーキンソン病の病態解明および治療法開発を目指して研究をおこなっております。",
+    "image": "images/organizer-jun-ueda.avif"
+  },
+  {
+    "category": "幹事",
+    "nameJa": "乾 洋勉",
+    "nameEn": "Hiroyasu Inui",
+    "affiliation": "Department of Pathology, Northwestern University",
+    "description": "後先考えずに進むのがコツです。",
+    "image": "images/organizer-hiroyasu-inui.avif"
+  },
+  {
+    "category": "幹事",
+    "nameJa": "北 香織",
+    "nameEn": "Kahori Kita",
+    "affiliation": "所属確認中",
+    "description": "説明文準備中",
+    "image": "images/noimage.avif"
+  },
+  {
+    "category": "幹事",
+    "nameJa": "清田 直樹",
+    "nameEn": "Naoki Kiyota",
+    "affiliation": "FCVRRI, Northwestern University",
+    "description": "緑内障におけるvasculatureの役割を、臨床、基礎両面から解明を目指します。",
+    "image": "images/organizer-naoki-kiyota.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "前川 洋",
+    "nameEn": "Hiroshi Maekawa",
+    "affiliation": "FCVRRI, Northwestern University",
+    "description": "東京慈恵会医科大学を2011年に卒業し、2019年に東京大学でPhDを取得しました。腎臓病の複雑な病態にシングルセル解析とメタボローム解析からアプローチしています。メタボローム、エピゲノム、トランスクリプトームの連関に注目し、シングルセルレベルでの代謝モディフィケーションを介した革新的な治療戦略を発見することが目標です。",
+    "image": "images/former-hiroshi-maekawa.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "夜久 英憲",
+    "nameEn": "Hidenori Yaku",
+    "affiliation": "Division of Cardiology, Department of Medicine, and Bluhm Cardiovascular Institute, Northwestern University Feinberg School of Medicine",
+    "description": "京都大学循環器内科にてPhD取得。2022年10月よりノースウェスタン大学循環器内科に所属し、HFpEFに特化した臨床研究チームにて、いまだ確立した治療法のないHFpEFに対する個別化治療の実現、新たな心不全デバイス開発を目指しています。将来的には、地域へ届く至高の心不全診療モデルを創り、人類へ貢献することが目標です。",
+    "image": "images/former-hidenori-yaku.jpeg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "夜久 愛",
+    "nameEn": "Ai Yaku",
+    "affiliation": "Division of Cardiology, Northwestern University",
+    "description": "日本では京都大学 免疫・膠原病内科に所属し、免疫異常によって引き起こされる肺高血圧症の基礎研究や膠原病疾患の臨床研究をしていました。ノースウェスタン大学では臨床検体・データを用いて、強皮症性心疾患・肺高血圧症の病態解明に取り組んでいます。",
+    "image": "images/former-ai-yaku.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "木戸口 正典",
+    "nameEn": "Masanori Kidoguchi",
+    "affiliation": "Division of Allergy and Immunology, Northwestern University",
+    "description": "福井大学耳鼻咽喉科・頭頸部外科から筑波大学遺伝医学へ国内留学し、花粉症や好酸球性副鼻腔炎に関する研究を行いPhDを取得しました。ノースウェスタン大学でも引き続き指定難病である好酸球性副鼻腔炎や国民病である花粉症の撲滅を目指し、シングルセル解析を中心とした多面的なアプローチで研究に取り組んでおります。",
+    "image": "images/former-masanori-kidoguchi.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "西脇 宏樹",
+    "nameEn": "Hiroki Nishiwaki",
+    "affiliation": "Division of Nephrology, Department of Medicine, University of Illinois at Chicago",
+    "description": "バックグラウンドは腎臓・透析・膠原病内科で、2023年4月からUIC NephrologyでCRIC - Chronic Renal Insufficiency Cohort Study for Kidney Diseaseのデータを用いた臨床研究を行っています。",
+    "image": "images/former-hiroki-nishiwaki.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "氏家 直人",
+    "nameEn": "Naoto Ujiie",
+    "affiliation": "Feinberg Cardiovascular and Renal Research Institute, Kume lab, Northwestern University",
+    "description": "東北大学消化器外科出身で、2021年4月よりノースウエスタン大学で腫瘍血管・リンパ管新生に関する研究に従事しておりました。主にForkhead転写因子の発現に関連する研究を行っておりました。",
+    "image": "images/former-naoto-ujiie.jpeg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "舘越 勇輝",
+    "nameEn": "Yuki Tatekoshi",
+    "affiliation": "Feinberg Cardiovascular and Renal Research Institute, Ardehali lab, Northwestern University",
+    "description": "2018年から2023年の間にノースウエスタン大学ファインバーグ心臓血管研究所Ardehali研究室で研究に取り組みました。主に代謝・タンパク質の糖鎖修飾に着目して心不全の病態解明、治療法開発に取り組んでいます。",
+    "image": "images/former-yuki-tatekoshi.png"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "飯塚 崇",
+    "nameEn": "Takashi Iizuka",
+    "affiliation": "Obstetrics and Gynecology, Northwestern University",
+    "description": "金沢大学産婦人科にてPhD取得。2021年1月から2023年9月の期間ノースウエスタン大学の産婦人科に所属し、子宮筋腫チームで研究をし、子宮筋腫のアミノ酸代謝の変化に注目して新規治療法の開発を目指していました。",
+    "image": "images/former-takashi-iizuka.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "突沖 貴宏",
+    "nameEn": "Takahiro Tsukioki",
+    "affiliation": "Department of Surgery, Northwestern University",
+    "description": "ノースウエスタン大学の乳腺外科に所属していました。stage IVの乳癌に対する局所治療の有効性を検討する臨床研究と、BRCA遺伝子変異陽性乳癌マウスを用いたprevention治療の基礎研究を行いました。",
+    "image": "images/former-takahiro-tsukioki.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "冨田 祐介",
+    "nameEn": "Yusuke Tomita",
+    "affiliation": "Department of Pediatrics, PI: Oren J Becher",
+    "description": "小児脳腫瘍の研究をしていました。現在岡山大学の客員研究員も勤めております。",
+    "image": "images/noimage.avif"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "田中 仁啓",
+    "nameEn": "Yoshihiro Tanaka",
+    "affiliation": "Center for Arrhythmia Research",
+    "description": "Co-Founder。もともと不整脈を専門としていた循環器内科医ですが、現在では循環器疾患の予防に興味を持ち、専門分野を超えて広く研究を行っていました。",
+    "image": "images/former-yoshihiro-tanaka.jpg"
+  },
+  {
+    "category": "元幹事・創設メンバー",
+    "nameJa": "高田 望",
+    "nameEn": "Nozomu Takata",
+    "affiliation": "Simpson Querrey Biomedical Research Center, Northwestern University",
+    "description": "Co-Founder。複雑な臓器を創造するオルガノイド科学技術をもちいた生命医学研究を行う。2021年、日本人研究者コミュニティの発展および日米関係の進展に貢献したとして総領事館より表彰された。",
+    "image": "images/former-nozomu-takata.jpg"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "今村 真也",
+    "nameEn": "Shinya Imamura",
+    "affiliation": "Department of Pathology, Northwestern University",
+    "description": "神戸で皮膚科をしておりました。よろしくお願いします。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "塩谷 拓嗣",
+    "nameEn": "Takuji Enya",
+    "affiliation": "Department of Microbiology and Immunology, University of Illinois at Chicago",
+    "description": "3度目の正直で海外に飛び立つことができました。失敗から多くのことを学びました。努力を継続すれば目標は実現するという言葉を信じ、次なる目標を目指してScienceをエンジョイしています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "大池 潤",
+    "nameEn": "Jun Oike",
+    "affiliation": "Orthopedics, Rush University Medical Center",
+    "description": "昭和大学江東豊洲病院整形外科から2024年4月よりRush University Medical CenterにResearch Fellowとして留学しています。整形外科医として膝関節およびスポーツ医療を専門としております。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "大和田 渉",
+    "nameEn": "Wataru Ohwada",
+    "affiliation": "Feinberg Cardiovascular and Renal Research Institute, Northwestern University → Sarver Heart Center, The University of Arizona",
+    "description": "2024年4月に札幌からNorthwestern大学に基礎研究留学で渡米しましたが、2025年6月末付けでアリゾナ大学に異動しました。心血管疾患の代謝、免疫、細胞死、鉄代謝について研究しています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "岡 愛子",
+    "nameEn": "Aiko Oka",
+    "affiliation": "Division of Allergy and Immunology, Northwestern University",
+    "description": "2023年4月からノースウエスタン大学で慢性副鼻腔炎の組織RNA解析を用いた炎症機序解明をテーマに研究を行っています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "海寶 大輔",
+    "nameEn": "Taisuke Kaihou",
+    "affiliation": "Thoracic Surgery, Northwestern University",
+    "description": "千葉大学呼吸器外科出身で、PhD取得後に2023年3月からノースウェスタン大学呼吸器外科に所属しています。肺移植拒絶反応の機序解明に関する基礎研究を行っています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "柿原 伸次",
+    "nameEn": "Shinji Kakihara",
+    "affiliation": "Department of Ophthalmology, Northwestern University",
+    "description": ""
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "加藤 眞理子",
+    "nameEn": "Mariko Kato",
+    "affiliation": "Weiss Memorial Hospital",
+    "description": "内科レジデンシーのために6月からシカゴに来ています。よろしくお願いします。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "鈴木 淳",
+    "nameEn": "Atsushi Suzuki",
+    "affiliation": "Division of Pulmonary and Critical Care, Department of Medicine, Northwestern University",
+    "description": "肺線維症や肺の微小環境ニッチについて多面的なアプローチで研究を行っています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "鈴木 拓馬",
+    "nameEn": "Takuma Suzuki",
+    "affiliation": "Obstetrics and Gynecology, Northwestern University",
+    "description": "金沢大学産科婦人科からNorthwestern Universityへ留学しています。子宮筋腫の発生メカニズムや新たな治療法について研究中です。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "田所 功",
+    "nameEn": "Koh Tadokoro",
+    "affiliation": "Department of Neurology, Northwestern University",
+    "description": "2023年3月から留学中です。患者由来iPS細胞を用いてパーキンソン病などの神経疾患の病態解明、新規治療開発を目指した研究に従事しています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "原 怜史",
+    "nameEn": "Satoshi Hara",
+    "affiliation": "Department of Medicine, Section of Rheumatology, The University of Chicago",
+    "description": "腎臓・リウマチ膠原病領域を専門としています。腎臓病理に興味を持ち、腎病理診断や病理学的研究を行ってきました。現在、multiplex imagingの技術を用いて自己免疫疾患による腎臓病の病態解明を目指しています。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "増原 香織",
+    "nameEn": "Kahori Masuhara",
+    "affiliation": "Department of Pharmacology and Regenerative Medicine, University of Illinois at Chicago",
+    "description": "日本でPhDを取得後、一般企業で勤めたのち、ポスドクとして渡米しました。現在は肺疾患の基礎研究に携わっております。"
+  },
+  {
+    "category": "2024年度メンバー",
+    "nameJa": "渡辺 知志",
+    "nameEn": "Satoshi Watanabe",
+    "affiliation": "Division of Pulmonary and Critical Care, Northwestern University",
+    "description": "Northwestern大学ではマクロファージに注目した肺線維症の病態研究を行いました。帰国後はマクロファージによる肺修復・再生メカニズムに焦点を当て、臨床・基礎研究に従事しています。"
+  }
+]

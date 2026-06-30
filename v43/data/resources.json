@@ -1,0 +1,79 @@
+[
+  {
+    "category": "生活立ち上げ",
+    "title": "Chicago Public Library Cardと無料・割引特典",
+    "description": "Chicago Public Library Cardの作り方、Digital Museum Passes、電子書籍、オンライン学習、印刷・スキャン、CityKeyなどをまとめます。",
+    "updated": "2026/04/25",
+    "url": "resources/chicago-public-library-card.html"
+  },
+  {
+    "category": "生活立ち上げ",
+    "title": "Social Security Number (SSN)について",
+    "description": "SSNの概要、申請タイミング、必要書類、申請手順、注意点をまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/ssn.html"
+  },
+  {
+    "category": "生活立ち上げ",
+    "title": "渡米直後に困る「クレジットヒストリーなし問題」",
+    "description": "米国でcredit historyがない場合に起こりやすい問題、JAL USA CARD、ANA CARD U.S.A.、Amex、secured credit card、credit report確認の基本をまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/credit-history.html"
+  },
+  {
+    "category": "住居・生活",
+    "title": "Northwestern University Chicago campus周辺での住まい探し",
+    "description": "Streeterville、Gold Coast、Lakeshore Eastなど、シカゴキャンパス周辺で住居候補になりやすいエリア、治安、家賃、車・自転車利用の注意点をまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/chicago-housing.html"
+  },
+  {
+    "category": "子ども・学校",
+    "title": "Ogden International Schoolについて",
+    "description": "Ogden International Schoolのキャンパス構成、通学方法、入学手続き、必要書類、健康診断・予防接種、給食、after school、日本語補習校などをまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/ogden-international-school.html"
+  },
+  {
+    "category": "子ども・学校",
+    "title": "小学校・保育園",
+    "description": "お子さんも一緒に留学される方向けに、CPS、Ogden、Preschool、Daycare、保育費用、学校・保育園選びのポイントをまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/chicago-schools-daycare.html"
+  },
+  {
+    "category": "子ども・学校",
+    "title": "サマーキャンプ",
+    "description": "シカゴの夏休み、Chicago Park DistrictのDay Camp、Downtown周辺の候補、private camp、登録準備、camp選びのポイントをまとめます。",
+    "updated": "2026/04/24",
+    "url": "resources/chicago-summer-camp.html"
+  },
+  {
+    "category": "車・免許",
+    "title": "運転免許取得・更新",
+    "description": "運転免許取得、更新、車購入、保険などの情報をまとめます。",
+    "updated": "準備中",
+    "url": ""
+  },
+  {
+    "category": "研究・キャリア",
+    "title": "フェローシップ・研究助成",
+    "description": "留学中に応募可能な研究助成やフェローシップ情報をまとめます。",
+    "updated": "準備中",
+    "url": ""
+  },
+  {
+    "category": "研究・キャリア",
+    "title": "寄稿記事",
+    "description": "NUJRAメンバーによる留学・研究・キャリアに関する寄稿記事を掲載します。",
+    "updated": "準備中",
+    "url": ""
+  },
+  {
+    "category": "その他",
+    "title": "グリーンカード・ビザ関連情報",
+    "description": "永住権、ビザ、滞在資格に関する体験談・参考情報を整理します。",
+    "updated": "準備中",
+    "url": ""
+  }
+]

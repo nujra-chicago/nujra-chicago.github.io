@@ -1,0 +1,326 @@
+[
+  {
+    "nameJa": "",
+    "nameEn": "Kenta Kuramoto",
+    "affiliation": "The He Laboratory, Northwestern University",
+    "description": ""
+  },
+  {
+    "nameJa": "寺嶋 秀騎",
+    "nameEn": "Hideki Terajima",
+    "affiliation": "University of Chicago",
+    "description": "エピトランスクリプトーム、mRNA修飾、遺伝子発現制御、体内時計"
+  },
+  {
+    "nameJa": "小野 和也",
+    "nameEn": "Kazuya Ono",
+    "affiliation": "University of Chicago",
+    "description": "マウス内耳前庭器官の発生・機能、聴覚・平衡覚"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "野村 寿博",
+    "affiliation": "Toshihiro Nomura",
+    "description": "Northwestern University, Department of Physiology / Department of Neurobiology, Feinberg School of Medicine"
+  },
+  {
+    "nameJa": "今里 和樹",
+    "nameEn": "Kazuki Imasato",
+    "affiliation": "Northwestern University, Department of Materials Engineering",
+    "description": "半導体、熱電材料、エネルギー材料"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "辻川 翔吾",
+    "affiliation": "Shogo Tsujikawa",
+    "description": "Department of Pharmacology, Northwestern University"
+  },
+  {
+    "nameJa": "佐藤 輝紀",
+    "nameEn": "Teruki Sato",
+    "affiliation": "Northwestern University, FCVRRI / Ardehali Lab",
+    "description": "循環器、心不全、RNA結合タンパク、糖代謝異常"
+  },
+  {
+    "nameJa": "甲能 武幸",
+    "nameEn": "Takeyuki Kono",
+    "affiliation": "Northwestern University, Department of Microbiology-Immunology / Laimins Lab",
+    "description": "耳鼻咽喉科、HPV関連頭頸部癌、DNA損傷修復、APOBEC"
+  },
+  {
+    "nameJa": "和佐野 浩一郎",
+    "nameEn": "Koichiro Wasano",
+    "affiliation": "国立病院機構 東京医療センター 臨床研究センター 聴覚障害研究室",
+    "description": "遺伝性難聴、聴覚研究"
+  },
+  {
+    "nameJa": "神津 英至",
+    "nameEn": "Hidemichi Kouzu",
+    "affiliation": "Northwestern University / 札幌医科大学 循環器・腎臓・代謝内分泌内科学講座",
+    "description": "心不全、心筋代謝、mTOR制御"
+  },
+  {
+    "nameJa": "山本 聡",
+    "nameEn": "Soh Yamamoto",
+    "affiliation": "Northwestern University, He Laboratory / 札幌医科大学 微生物学講座",
+    "description": "オートファジー、RNAウイルス、RSV、抗ウイルス薬開発"
+  },
+  {
+    "nameJa": "小笠原 徳子",
+    "nameEn": "Noriko Ogasawara",
+    "affiliation": "Northwestern University, Allergy and Immunology / Kato Lab / 札幌医科大学 耳鼻咽喉科学講座・微生物学講座",
+    "description": "自然免疫、慢性副鼻腔炎、RSウイルス"
+  },
+  {
+    "nameJa": "相馬 友和",
+    "nameEn": "Tomokazu Souma",
+    "affiliation": "Duke University, Assistant Professor",
+    "description": "腎臓、血管、低酸素応答"
+  },
+  {
+    "nameJa": "島津 洋介",
+    "nameEn": "Yosuke Shimazu",
+    "affiliation": "岡山大学大学院 脳神経外科学",
+    "description": "脳神経外科"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "手束 文威",
+    "affiliation": "Fumitake Tezuka",
+    "description": "徳島大学"
+  },
+  {
+    "nameJa": "久松 隆史",
+    "nameEn": "Takashi Hisamatsu",
+    "affiliation": "岡山大学大学院 公衆衛生学 准教授",
+    "description": "疫学、公衆衛生、循環器疾患予防"
+  },
+  {
+    "nameJa": "林 浩伸",
+    "nameEn": "Hironobu Hayashi",
+    "affiliation": "奈良県立医科大学",
+    "description": "神経モニタリング、眼循環"
+  },
+  {
+    "nameJa": "石井 俊行",
+    "nameEn": "Toshiyuki Ishii",
+    "affiliation": "日本医科大学 医学部 生理学教室 講師",
+    "description": "生理学"
+  },
+  {
+    "nameJa": "末松 尚史",
+    "nameEn": "Naofumi Suematsu",
+    "affiliation": "大阪大学",
+    "description": "神経科学、人工視覚"
+  },
+  {
+    "nameJa": "意元 義政",
+    "nameEn": "Yoshimasa Imoto",
+    "affiliation": "福井大学 耳鼻咽喉科・頭頸部外科学",
+    "description": "慢性副鼻腔炎、アレルギー性鼻炎"
+  },
+  {
+    "nameJa": "河口 まどか",
+    "nameEn": "Madoka Kawaguchi",
+    "affiliation": "Northwestern University, Huiping Liu Lab",
+    "description": "循環腫瘍細胞、がん転移"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "Marie Ikeda",
+    "affiliation": "NUJRA alumnus",
+    "description": ""
+  },
+  {
+    "nameJa": "牛島 健太郎",
+    "nameEn": "Kentaro Ushijima",
+    "affiliation": "山口東京理科大学",
+    "description": "教授"
+  },
+  {
+    "nameJa": "佐々木 貴浩",
+    "nameEn": "Takahiro Sasaki",
+    "affiliation": "Northwestern University, Hashizume Lab / Department of Neurological Surgery",
+    "description": "小児脳腫瘍、epigenetic therapy、drug delivery"
+  },
+  {
+    "nameJa": "堀 耕太郎",
+    "nameEn": "Kotaro Hori",
+    "affiliation": "大阪市立大学大学院医学研究科 麻酔科学",
+    "description": "CRAC channel、麻酔科学、イオンチャネル"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "田口 昭彦",
+    "affiliation": "Akihiko Taguchi",
+    "description": "山口大学"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "宮崎 薫",
+    "affiliation": "Kaoru Miyazaki",
+    "description": "Northwestern University, Bulun Lab"
+  },
+  {
+    "nameJa": "諏訪 賢一郎",
+    "nameEn": "Kenichiro Suwa",
+    "affiliation": "Northwestern University, Department of Radiology / 浜松医科大学 循環器内科",
+    "description": "4D flow MRI、心血管血流解析、弁膜症、wall shear stress"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "Masanori Miyauchi",
+    "affiliation": "Northwestern University, Herbert Y. Meltzer Lab / Dainippon Sumitomo Pharma Co., Ltd",
+    "description": ""
+  },
+  {
+    "nameJa": "豊田 行英",
+    "nameEn": "Takahide Toyoda",
+    "affiliation": "Northwestern University, Division of Thoracic Surgery",
+    "description": "呼吸器外科、肺移植、移植片機能障害、拒絶反応、マクロファージ"
+  },
+  {
+    "nameJa": "伊師 雪友",
+    "nameEn": "Yukitomo Ishi",
+    "affiliation": "Northwestern University, Hashizume Lab, Department of Pediatrics",
+    "description": "小児脳腫瘍"
+  },
+  {
+    "nameJa": "大塚 信太朗",
+    "nameEn": "Shintaro Otsuka",
+    "affiliation": "Northwestern University, Physiology / Anis Contractor Lab",
+    "description": "自閉症モデルマウス、行動神経科学"
+  },
+  {
+    "nameJa": "渡邉 潤",
+    "nameEn": "Jun Watanabe",
+    "affiliation": "Northwestern University, Hashizume Lab",
+    "description": "脳神経外科、小児脳腫瘍、translational research"
+  },
+  {
+    "nameJa": "海野 研二",
+    "nameEn": "Kenji Unno",
+    "affiliation": "Northwestern University Feinberg School of Medicine",
+    "description": "前立腺癌、前立腺上皮細胞、分子メカニズム"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "Jason Shapiro",
+    "affiliation": "Northwestern University, Ardehali Lab",
+    "description": ""
+  },
+  {
+    "nameJa": "",
+    "nameEn": "杉本 友紀",
+    "affiliation": "Yuki Sugimoto",
+    "description": "Athletic Movement Performance Lab"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "小林 由美子",
+    "affiliation": "Yumiko Kobayashi",
+    "description": "Northwestern University, Bass Lab"
+  },
+  {
+    "nameJa": "阿部 幸喜",
+    "nameEn": "Kouki Abe",
+    "affiliation": "Northwestern University, Hashizume Laboratory",
+    "description": "脳幹腫瘍、xenograft、新規治療法"
+  },
+  {
+    "nameJa": "若泉 謙太",
+    "nameEn": "Kenta Wakaizumi",
+    "affiliation": "Northwestern University, Baliki Lab",
+    "description": "ブレイン・イメージング、痛み研究"
+  },
+  {
+    "nameJa": "岩﨑 成仁",
+    "nameEn": "Naruhito Iwasaki",
+    "affiliation": "Northwestern University, Division of Allergy & Immunology",
+    "description": "耳鼻咽喉科、アレルギー・免疫"
+  },
+  {
+    "nameJa": "片木 宏昭",
+    "nameEn": "Hiroaki Katagi",
+    "affiliation": "Rush University, Spine Biomechanics Laboratory",
+    "description": "小児脳腫瘍、びまん性橋膠腫、translational research"
+  },
+  {
+    "nameJa": "竹重 暢之",
+    "nameEn": "Nobuyuki Takeshige",
+    "affiliation": "Rush University / Rintaro Hashizume Lab",
+    "description": "脳神経外科、小児脳腫瘍"
+  },
+  {
+    "nameJa": "佐藤 敦",
+    "nameEn": "Atsushi Sato",
+    "affiliation": "Rush University Medical Center, Department of Orthopedic Surgery",
+    "description": "整形外科"
+  },
+  {
+    "nameJa": "三浦 俊輔",
+    "nameEn": "Shunsuke Miura",
+    "affiliation": "Northwestern University, Ardehali Lab / FCVRI",
+    "description": "T細胞、Hexokinase、免疫細胞、心疾患"
+  },
+  {
+    "nameJa": "谷口 紗貴子",
+    "nameEn": "Sakiko Taniguchi",
+    "affiliation": "Northwestern University, Geoff Swanson Lab",
+    "description": "神経科学、生理学"
+  },
+  {
+    "nameJa": "小島 敬史",
+    "nameEn": "Takashi Kojima",
+    "affiliation": "Homma Laboratory",
+    "description": "耳鼻咽喉科、先天性難聴、内耳タンパク機能解析、薬剤スクリーニング、チャネル機能"
+  },
+  {
+    "nameJa": "後藤 昌英",
+    "nameEn": "Masahide Goto",
+    "affiliation": "University of Illinois at Chicago, Yamada Lab",
+    "description": "小児神経科、腫瘍イメージング、光免疫療法"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "松尾 崇史",
+    "affiliation": "Takashi Matsuo",
+    "description": "University of Illinois at Chicago, Microbiology and Immunology, Sano Lab"
+  },
+  {
+    "nameJa": "仁藤 充洋",
+    "nameEn": "Mitsuhiro Nito",
+    "affiliation": "山形県立保健医療大学 作業療法学科",
+    "description": "解剖学、神経科学、神経内科、リハビリテーション"
+  },
+  {
+    "nameJa": "古屋 貴之",
+    "nameEn": "Takayuki Koya",
+    "affiliation": "Rush University Medical Center, Orthopedic Surgery",
+    "description": "整形外科、tribology、motion analysis"
+  },
+  {
+    "nameJa": "二又 葉音",
+    "nameEn": "Haon Futamata",
+    "affiliation": "Feinberg School of Medicine, Northwestern University",
+    "description": "分子生物学"
+  },
+  {
+    "nameJa": "",
+    "nameEn": "Miho Kitamura",
+    "affiliation": "University of Chicago Booth School of Business",
+    "description": "心理学"
+  },
+  {
+    "nameJa": "神前 拓平",
+    "nameEn": "Takuhei Kozaki",
+    "affiliation": "Rush University Medical Center, Orthopedic Surgery",
+    "description": "整形外科"
+  },
+  {
+    "nameJa": "山田 かおり",
+    "nameEn": "Kaori Yamada",
+    "affiliation": "University of Illinois at Chicago, Department of Pharmacology",
+    "description": "分子生物学、腫瘍学、眼科学"
+  }
+]
