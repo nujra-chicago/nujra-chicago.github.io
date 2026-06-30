@@ -1846,10 +1846,12 @@ body.home-page {
 
   .home-page .hero-content {
     padding: 18px 16px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .home-page .hero-title-grid {
-    font-size: clamp(1.78rem, 9vw, 2.55rem);
+    font-size: clamp(1.16rem, 5.9vw, 1.9rem);
   }
 
   .home-page .lead {
@@ -1860,6 +1862,17 @@ body.home-page {
   .section-soft {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-page .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-page .btn {
+    width: 100%;
   }
 }
 
