@@ -2,7 +2,7 @@
 
 This is the official NUJRA static website for GitHub Pages.
 
-The live site is served from the repository root. Archived versioned folders such as `v43/` are kept for history and should not be edited for normal production updates.
+The live site is served from the repository root at `https://nujra-chicago.github.io/`. Archived versioned folders such as `v43/` are kept for history and should not be edited for normal production updates.
 
 ## Site Structure
 
@@ -22,11 +22,7 @@ Hero image rotation is manually managed. New hero images must be uploaded to `im
 
 This is a static HTML/CSS/JS site for GitHub Pages.
 
-The root `CNAME` file configures the custom domain:
-
-```text
-nujra-chicago.org
-```
+No custom domain is currently configured. To use a paid custom domain later, add a root `CNAME` file and configure the domain's DNS for GitHub Pages.
 
 The root `.nojekyll` file is kept so GitHub Pages serves static assets without Jekyll processing.
 
