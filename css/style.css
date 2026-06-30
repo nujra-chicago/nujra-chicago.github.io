@@ -699,6 +699,10 @@ h3,
   overflow-wrap: break-word;
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 
 
 .hero-title {
