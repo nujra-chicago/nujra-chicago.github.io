@@ -193,7 +193,6 @@ async function initMembersIfPresent() {
   const targets = [
     { id: "organizerList", category: "幹事" },
     { id: "formerOrganizerList", category: "元幹事・創設メンバー" },
-    { id: "currentMemberList", category: "2024年度メンバー" },
     { id: "memberList", category: null }
   ];
 
