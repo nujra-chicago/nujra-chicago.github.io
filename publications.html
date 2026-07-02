@@ -6,7 +6,7 @@
 
   <title>論文業績 | NUJRA</title>
   <meta name="description" content="NUJRA会員による論文業績を紹介します。" />
-  <link rel="stylesheet" href="css/style.css?v=46" />
+  <link rel="stylesheet" href="css/style.css?v=47" />
 </head>
 
 <body>
@@ -47,6 +47,29 @@
       <p class="lead">
         NUJRA会員による、シカゴ周辺の大学・研究機関所属で発表された筆頭著者原著論文を紹介します。
       </p>
+    </section>
+
+    <section class="section publication-toolbar" aria-label="論文検索">
+      <div class="publication-controls">
+        <label class="search-box publication-search" for="publicationSearch">
+          検索
+          <input id="publicationSearch" type="search" placeholder="氏名・論文名・雑誌名・DOI" autocomplete="off" />
+        </label>
+
+        <label class="publication-select" for="publicationSort">
+          並び替え
+          <select id="publicationSort">
+            <option value="year-desc">新しい年順</option>
+            <option value="year-asc">古い年順</option>
+            <option value="name-asc">年別・氏名順</option>
+            <option value="journal-asc">年別・雑誌名順</option>
+          </select>
+        </label>
+
+        <div class="publication-result-count" id="publicationResultCount" aria-live="polite"></div>
+      </div>
+
+      <div class="empty-state publication-empty" id="publicationEmpty" hidden>該当する論文はありません。</div>
     </section>
 
     <section class="section section-soft">
@@ -533,6 +556,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=46"></script>
+  <script src="js/main.js?v=47"></script>
 </body>
 </html>

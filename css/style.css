@@ -445,6 +445,73 @@ p {
   overflow-wrap: anywhere;
 }
 
+.publication-toolbar {
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+
+.publication-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px 18px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+}
+
+.publication-controls .search-box {
+  margin-top: 0;
+}
+
+.publication-select {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 720;
+}
+
+.publication-select select {
+  width: min(220px, 80vw);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 38px 11px 13px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.publication-result-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 780;
+}
+
+.publication-empty {
+  margin-top: 14px;
+}
+
+@media (max-width: 560px) {
+  .publication-controls {
+    align-items: stretch;
+  }
+
+  .publication-search,
+  .publication-search input,
+  .publication-select,
+  .publication-select select,
+  .publication-result-count {
+    width: 100%;
+  }
+
+  .publication-result-count {
+    margin-left: 0;
+  }
+}
+
 .text-link {
   color: var(--blue-2);
   font-weight: 840;

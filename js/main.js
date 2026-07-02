@@ -221,6 +221,99 @@ async function initAlumniIfPresent() {
   list.innerHTML = alumni.map(makeMemberCard).join("") || emptyState("過去メンバー情報はまだ登録されていません。");
 }
 
+function initPublicationsPage() {
+  const searchInput = document.getElementById("publicationSearch");
+  const sortSelect = document.getElementById("publicationSort");
+  const resultCount = document.getElementById("publicationResultCount");
+  const empty = document.getElementById("publicationEmpty");
+  const main = document.getElementById("main");
+
+  if (!searchInput || !sortSelect || !resultCount || !empty || !main) return;
+
+  const collator = new Intl.Collator("ja", { numeric: true, sensitivity: "base" });
+  const publicationSections = Array.from(document.querySelectorAll(".publication-list"))
+    .map((list, sectionIndex) => {
+      const section = list.closest("section");
+      const heading = section?.querySelector("h2");
+      const year = Number((heading?.textContent || "").match(/\d{4}/)?.[0] || 0);
+      const records = Array.from(list.querySelectorAll(".publication-item")).map((item, itemIndex) => {
+        const meta = item.querySelectorAll(".publication-meta span");
+        const author = meta[0]?.textContent.trim() || "";
+        const journal = item.querySelector("em")?.textContent.trim() || "";
+        const title = item.querySelector("p")?.textContent.trim() || "";
+        const searchText = `${year} ${item.textContent}`.toLocaleLowerCase("ja");
+
+        return { item, itemIndex, author, journal, title, searchText };
+      });
+
+      return { section, list, year, sectionIndex, records };
+    })
+    .filter(group => group.section && group.year && group.records.length);
+
+  const totalCount = publicationSections.reduce((count, group) => count + group.records.length, 0);
+
+  const sortRecords = (records, mode) => {
+    const sorted = [...records];
+
+    if (mode === "name-asc") {
+      sorted.sort((a, b) =>
+        collator.compare(a.author, b.author) ||
+        collator.compare(a.title, b.title) ||
+        a.itemIndex - b.itemIndex
+      );
+      return sorted;
+    }
+
+    if (mode === "journal-asc") {
+      sorted.sort((a, b) =>
+        collator.compare(a.journal, b.journal) ||
+        collator.compare(a.author, b.author) ||
+        a.itemIndex - b.itemIndex
+      );
+      return sorted;
+    }
+
+    return sorted.sort((a, b) => a.itemIndex - b.itemIndex);
+  };
+
+  const applyPublicationControls = () => {
+    const query = searchInput.value.trim().toLocaleLowerCase("ja");
+    const mode = sortSelect.value;
+    const sectionOrder = [...publicationSections].sort((a, b) => {
+      if (mode === "year-asc") return a.year - b.year;
+      return b.year - a.year;
+    });
+    let visibleCount = 0;
+
+    sectionOrder.forEach(group => {
+      main.appendChild(group.section);
+
+      const orderedRecords = sortRecords(group.records, mode);
+      let visibleInSection = 0;
+
+      orderedRecords.forEach(record => {
+        const isMatch = !query || record.searchText.includes(query);
+        record.item.hidden = !isMatch;
+        group.list.appendChild(record.item);
+
+        if (isMatch) {
+          visibleCount += 1;
+          visibleInSection += 1;
+        }
+      });
+
+      group.section.hidden = visibleInSection === 0;
+    });
+
+    resultCount.textContent = `${visibleCount}件 / ${totalCount}件`;
+    empty.hidden = visibleCount > 0;
+  };
+
+  searchInput.addEventListener("input", applyPublicationControls);
+  sortSelect.addEventListener("change", applyPublicationControls);
+  applyPublicationControls();
+}
+
 
 function setupHeaderScrollState() {
   if (!document.body.classList.contains("home-page")) return;
@@ -238,3 +331,4 @@ initHome();
 initResourcesPage();
 initMembersIfPresent();
 initAlumniIfPresent();
+initPublicationsPage();
