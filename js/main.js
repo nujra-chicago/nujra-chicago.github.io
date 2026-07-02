@@ -95,6 +95,33 @@ function setupMobileMenu() {
   });
 }
 
+function parseDateOnly(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || "");
+  if (!match) return null;
+
+  return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+}
+
+function initNewBadges() {
+  const visibleDays = 14;
+  const now = new Date();
+
+  document.querySelectorAll(".home-update-item .new-badge").forEach(badge => {
+    const item = badge.closest(".home-update-item");
+    const time = item?.querySelector("time[datetime]");
+    const updateDate = parseDateOnly(time?.getAttribute("datetime"));
+    if (!updateDate) return;
+
+    const expiresAt = new Date(updateDate);
+    expiresAt.setDate(expiresAt.getDate() + visibleDays);
+
+    if (now >= expiresAt) {
+      badge.hidden = true;
+      badge.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
 function makeResourceCard(item) {
   const inner = `
     <span class="badge">${escapeHtml(item.category)}</span>
@@ -414,6 +441,7 @@ function setupHeaderScrollState() {
 setupHeroRotation();
 setupMobileMenu();
 setupHeaderScrollState();
+initNewBadges();
 initHome();
 initResourcesPage();
 initMembersIfPresent();
