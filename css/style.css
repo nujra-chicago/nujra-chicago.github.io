@@ -453,8 +453,8 @@ p {
 .publication-controls {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
-  gap: 14px 18px;
+  align-items: center;
+  gap: 12px 18px;
   padding: 18px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -466,21 +466,16 @@ p {
   margin-top: 0;
 }
 
-.publication-select {
-  display: grid;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 720;
+.publication-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 420px;
 }
 
-.publication-select select {
-  width: min(220px, 80vw);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 11px 38px 11px 13px;
-  font: inherit;
-  background: #ffffff;
+.publication-search input {
+  width: auto;
+  flex: 1 1 260px;
 }
 
 .publication-result-count {
@@ -501,8 +496,6 @@ p {
 
   .publication-search,
   .publication-search input,
-  .publication-select,
-  .publication-select select,
   .publication-result-count {
     width: 100%;
   }
