@@ -7,7 +7,7 @@ const DATA_PATHS = {
   alumni: sitePath("data/alumni.json")
 };
 
-const ARTICLE_STATS_ENDPOINT = "";
+const ARTICLE_STATS_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8W95g1hfzVeiQLreRGMDq_VbqiSSVnfqMAI2CbG3riKrksE3B_-bwYyziyUqwn1ki/exec";
 
 async function loadJson(path, fallback = []) {
   try {

@@ -1,4 +1,6 @@
 const SHEET_NAME = "ArticleStats";
+const SPREADSHEET_NAME = "NUJRA Article Stats";
+const SPREADSHEET_ID_PROPERTY = "NUJRA_ARTICLE_STATS_SPREADSHEET_ID";
 
 function doGet(e) {
   const params = e.parameter || {};
@@ -47,7 +49,8 @@ function doGet(e) {
       key,
       title: title || values[1],
       views,
-      likes
+      likes,
+      spreadsheetUrl: sheet.getParent().getUrl()
     });
   } finally {
     lock.releaseLock();
@@ -55,7 +58,7 @@ function doGet(e) {
 }
 
 function getSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = getSpreadsheet_();
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
@@ -72,6 +75,23 @@ function getSheet_() {
   }
 
   return sheet;
+}
+
+function getSpreadsheet_() {
+  const properties = PropertiesService.getScriptProperties();
+  const existingId = properties.getProperty(SPREADSHEET_ID_PROPERTY);
+
+  if (existingId) {
+    try {
+      return SpreadsheetApp.openById(existingId);
+    } catch (error) {
+      properties.deleteProperty(SPREADSHEET_ID_PROPERTY);
+    }
+  }
+
+  const spreadsheet = SpreadsheetApp.create(SPREADSHEET_NAME);
+  properties.setProperty(SPREADSHEET_ID_PROPERTY, spreadsheet.getId());
+  return spreadsheet;
 }
 
 function findOrCreateRow_(sheet, key, title) {

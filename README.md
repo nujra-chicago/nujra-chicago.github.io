@@ -24,9 +24,9 @@ Resource article pages can show a like button and access counter.
 
 - The frontend is implemented in `js/main.js`
 - The Google Apps Script backend template is `tools/article-stats-apps-script.gs`
-- Create a Google Sheet from the NUJRA Google account, open Apps Script, paste the backend template, and deploy it as a web app
-- Set the deployed web app URL in `ARTICLE_STATS_ENDPOINT` in `js/main.js`
-- Until `ARTICLE_STATS_ENDPOINT` is set, the like/access widget is hidden so the site does not show fake counts
+- The deployed Google Apps Script web app URL is configured in `ARTICLE_STATS_ENDPOINT` in `js/main.js`
+- Counts are stored in the NUJRA Google account spreadsheet named `NUJRA Article Stats`
+- The widget is shown only on resource article pages under `resources/`
 
 ## Deployment Notes
 
