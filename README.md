@@ -18,6 +18,16 @@ Google Forms are used for admission, contact, and leave/unsubscribe forms.
 
 Hero image rotation is manually managed. New hero images must be uploaded to `images/hero/` and manually added to `HERO_IMAGES` in `js/main.js`.
 
+## Article Stats
+
+Resource article pages can show a like button and access counter.
+
+- The frontend is implemented in `js/main.js`
+- The Google Apps Script backend template is `tools/article-stats-apps-script.gs`
+- Create a Google Sheet from the NUJRA Google account, open Apps Script, paste the backend template, and deploy it as a web app
+- Set the deployed web app URL in `ARTICLE_STATS_ENDPOINT` in `js/main.js`
+- Until `ARTICLE_STATS_ENDPOINT` is set, the like/access widget is hidden so the site does not show fake counts
+
 ## Deployment Notes
 
 This is a static HTML/CSS/JS site for GitHub Pages.

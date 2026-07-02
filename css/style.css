@@ -1443,6 +1443,60 @@ code {
   margin-bottom: 8px;
 }
 
+.article-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin: 0 0 24px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.article-like-button,
+.article-stat {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 780;
+}
+
+.article-like-button {
+  cursor: pointer;
+}
+
+.article-like-button:hover {
+  border-color: #bfdbfe;
+  color: var(--blue-2);
+}
+
+.article-like-button.is-liked {
+  border-color: #fecdd3;
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.article-like-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.article-like-count,
+.article-view-count {
+  color: var(--navy);
+  font-weight: 900;
+}
+
 .internal-resource-link {
   margin: 20px 0 28px;
   border: 1px solid rgba(37, 99, 235, 0.28);

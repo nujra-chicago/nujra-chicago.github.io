@@ -7,6 +7,8 @@ const DATA_PATHS = {
   alumni: sitePath("data/alumni.json")
 };
 
+const ARTICLE_STATS_ENDPOINT = "";
+
 async function loadJson(path, fallback = []) {
   try {
     const response = await fetch(path, { cache: "no-cache" });
@@ -273,6 +275,132 @@ function initPublicationsPage() {
   applyPublicationControls();
 }
 
+function loadJsonp(url, params) {
+  return new Promise((resolve, reject) => {
+    const callbackName = `__nujraArticleStats${Date.now()}${Math.random().toString(36).slice(2)}`;
+    const script = document.createElement("script");
+    const query = new URLSearchParams({ ...params, callback: callbackName });
+    const timeout = window.setTimeout(() => {
+      cleanup();
+      reject(new Error("Article stats request timed out."));
+    }, 8000);
+
+    const cleanup = () => {
+      window.clearTimeout(timeout);
+      delete window[callbackName];
+      script.remove();
+    };
+
+    window[callbackName] = data => {
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error("Article stats request failed."));
+    };
+
+    script.src = `${url}${url.includes("?") ? "&" : "?"}${query.toString()}`;
+    document.head.appendChild(script);
+  });
+}
+
+function initArticleStats() {
+  const article = document.querySelector(".article-body");
+  const hero = document.querySelector(".article-hero");
+  if (!article || !hero || !window.location.pathname.includes("/resources/")) return;
+
+  const key = window.location.pathname
+    .replace(/^\/+/, "")
+    .replace(/\/index\.html$/, "/")
+    .replace(/\/$/, "");
+  const title = hero.querySelector("h1")?.textContent.trim() || document.title;
+  const likedKey = `nujra.articleLiked.${key}`;
+  const viewedKey = `nujra.articleViewed.${key}`;
+  const isConfigured = Boolean(ARTICLE_STATS_ENDPOINT);
+
+  const stats = document.createElement("div");
+  stats.className = "article-stats";
+  stats.innerHTML = `
+    <button class="article-like-button" type="button" ${isConfigured ? "" : "disabled"}>
+      <span aria-hidden="true">♡</span>
+      <span class="article-like-label">いいね</span>
+      <strong class="article-like-count">--</strong>
+    </button>
+    <span class="article-stat">
+      <span>アクセス</span>
+      <strong class="article-view-count">--</strong>
+    </span>
+  `;
+
+  article.insertBefore(stats, article.firstElementChild);
+
+  const likeButton = stats.querySelector(".article-like-button");
+  const likeIcon = likeButton.querySelector("[aria-hidden='true']");
+  const likeLabel = stats.querySelector(".article-like-label");
+  const likeCount = stats.querySelector(".article-like-count");
+  const viewCount = stats.querySelector(".article-view-count");
+  let isLiked = window.localStorage.getItem(likedKey) === "1";
+
+  const setLikedState = liked => {
+    isLiked = liked;
+    likeButton.classList.toggle("is-liked", liked);
+    likeIcon.textContent = liked ? "♥" : "♡";
+    likeLabel.textContent = liked ? "いいね済み" : "いいね";
+    likeButton.setAttribute("aria-pressed", String(liked));
+  };
+
+  const updateCounts = data => {
+    if (!data || data.ok === false) return;
+    likeCount.textContent = Number(data.likes || 0).toLocaleString("ja-JP");
+    viewCount.textContent = Number(data.views || 0).toLocaleString("ja-JP");
+  };
+
+  setLikedState(isLiked);
+
+  if (!isConfigured) {
+    stats.hidden = true;
+    return;
+  }
+
+  const viewedThisSession = window.sessionStorage.getItem(viewedKey) === "1";
+  const initialAction = viewedThisSession ? "get" : "view";
+
+  loadJsonp(ARTICLE_STATS_ENDPOINT, { action: initialAction, key, title })
+    .then(data => {
+      window.sessionStorage.setItem(viewedKey, "1");
+      updateCounts(data);
+    })
+    .catch(() => {
+      stats.classList.add("is-error");
+      viewCount.textContent = "--";
+      likeCount.textContent = "--";
+    });
+
+  likeButton.addEventListener("click", () => {
+    const nextLiked = !isLiked;
+    likeButton.disabled = true;
+
+    loadJsonp(ARTICLE_STATS_ENDPOINT, {
+      action: nextLiked ? "like" : "unlike",
+      key,
+      title
+    })
+      .then(data => {
+        window.localStorage.setItem(likedKey, nextLiked ? "1" : "0");
+        setLikedState(nextLiked);
+        updateCounts(data);
+      })
+      .catch(() => {
+        stats.classList.add("is-error");
+      })
+      .finally(() => {
+        likeButton.disabled = false;
+      });
+  });
+}
+
 
 function setupHeaderScrollState() {
   if (!document.body.classList.contains("home-page")) return;
@@ -291,3 +419,4 @@ initResourcesPage();
 initMembersIfPresent();
 initAlumniIfPresent();
 initPublicationsPage();
+initArticleStats();
