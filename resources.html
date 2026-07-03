@@ -6,7 +6,7 @@
 
   <title>お役立ち情報 | NUJRA</title>
   <meta name="description" content="シカゴ生活と研究留学に役立つ情報。" />
-  <link rel="stylesheet" href="css/style.css?v=46" />
+  <link rel="stylesheet" href="css/style.css?v=54" />
   
 </head>
 
@@ -61,6 +61,30 @@
     </p>
   </div>
 
+  <div class="resource-controls" aria-label="情報一覧の絞り込み">
+    <label class="search-box resource-search" for="resourceSearch">
+      <span>検索</span>
+      <input id="resourceSearch" type="search" placeholder="キーワードを入力" autocomplete="off" />
+    </label>
+
+    <label class="select-box" for="resourceCategory">
+      <span>カテゴリ</span>
+      <select id="resourceCategory"></select>
+    </label>
+
+    <label class="select-box" for="resourceSort">
+      <span>並び替え</span>
+      <select id="resourceSort">
+        <option value="updated">更新順</option>
+        <option value="access">アクセス順</option>
+        <option value="category">カテゴリ順</option>
+      </select>
+    </label>
+
+    <div class="resource-result-count" id="resourceResultCount" aria-live="polite"></div>
+  </div>
+
+  <div class="empty-state resource-empty" id="resourceEmpty" hidden>条件に合う情報はありません。</div>
   <div class="resource-grid" id="resourceList"></div>
 </section>
 
@@ -79,6 +103,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=46"></script>
+  <script src="js/main.js?v=54"></script>
 </body>
 </html>

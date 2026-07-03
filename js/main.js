@@ -102,6 +102,13 @@ function parseDateOnly(value) {
   return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
 }
 
+function parseResourceUpdated(value) {
+  const match = /^(\d{4})\/(\d{2})\/(\d{2})$/.exec(value || "");
+  if (!match) return 0;
+
+  return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])).getTime();
+}
+
 function initNewBadges() {
   const visibleDays = 14;
   const now = new Date();
@@ -123,11 +130,15 @@ function initNewBadges() {
 }
 
 function makeResourceCard(item) {
+  const accessMeta = Number.isFinite(item.views)
+    ? `<div class="meta">アクセス: ${Number(item.views).toLocaleString("ja-JP")}</div>`
+    : "";
   const inner = `
     <span class="badge">${escapeHtml(item.category)}</span>
     <h3>${escapeHtml(item.title)}</h3>
     <p>${escapeHtml(item.description)}</p>
     <div class="meta">最終更新: ${escapeHtml(item.updated)}</div>
+    ${accessMeta}
     <span class="card-action">${item.url ? "詳細を見る" : "準備中"}</span>
   `;
 
@@ -198,6 +209,44 @@ function renderFilterButtons(container, labels, onChange) {
   });
 }
 
+function sortResources(items, mode) {
+  const byUpdated = (a, b) => {
+    const updatedDiff = parseResourceUpdated(b.updated) - parseResourceUpdated(a.updated);
+    return updatedDiff || a.index - b.index;
+  };
+
+  return [...items].sort((a, b) => {
+    if (mode === "access") {
+      const aViews = Number.isFinite(a.views) ? a.views : -1;
+      const bViews = Number.isFinite(b.views) ? b.views : -1;
+      return bViews - aViews || byUpdated(a, b);
+    }
+
+    if (mode === "category") {
+      return String(a.category).localeCompare(String(b.category), "ja") || byUpdated(a, b);
+    }
+
+    return byUpdated(a, b);
+  });
+}
+
+async function hydrateResourceAccessCounts(resources) {
+  if (!ARTICLE_STATS_ENDPOINT) return;
+
+  await Promise.allSettled(resources
+    .filter(item => item.url)
+    .map(async item => {
+      const data = await loadJsonp(ARTICLE_STATS_ENDPOINT, {
+        action: "get",
+        key: item.url,
+        title: item.title
+      });
+
+      if (!data || data.ok === false) return;
+      item.views = Number(data.views || 0);
+    }));
+}
+
 async function initHome() {
   const homeResourceList = document.getElementById("homeResourceList");
 
@@ -212,8 +261,41 @@ async function initResourcesPage() {
   const list = document.getElementById("resourceList");
   if (!list) return;
 
-  const resources = await loadJson(DATA_PATHS.resources);
-  list.innerHTML = resources.map(makeResourceCard).join("") || emptyState("情報はまだ登録されていません。");
+  const searchInput = document.getElementById("resourceSearch");
+  const categorySelect = document.getElementById("resourceCategory");
+  const sortSelect = document.getElementById("resourceSort");
+  const resultCount = document.getElementById("resourceResultCount");
+  const empty = document.getElementById("resourceEmpty");
+  const resources = (await loadJson(DATA_PATHS.resources)).map((item, index) => ({
+    ...item,
+    index,
+    views: null
+  }));
+
+  if (categorySelect) {
+    const categories = ["すべて", ...Array.from(new Set(resources.map(item => item.category).filter(Boolean)))];
+    categorySelect.innerHTML = categories.map(category => `
+      <option value="${escapeHtml(category)}">${escapeHtml(category)}</option>
+    `).join("");
+  }
+
+  const applyControls = () => {
+    const query = searchInput?.value || "";
+    const category = categorySelect?.value || "すべて";
+    const sortMode = sortSelect?.value || "updated";
+    const filtered = sortResources(filterItems(resources, query, category), sortMode);
+
+    list.innerHTML = filtered.map(makeResourceCard).join("");
+    if (empty) empty.hidden = filtered.length > 0;
+    if (resultCount) resultCount.textContent = `${filtered.length}件 / ${resources.length}件`;
+  };
+
+  searchInput?.addEventListener("input", applyControls);
+  categorySelect?.addEventListener("change", applyControls);
+  sortSelect?.addEventListener("change", applyControls);
+
+  applyControls();
+  hydrateResourceAccessCounts(resources).then(applyControls);
 }
 
 async function initMembersIfPresent() {
