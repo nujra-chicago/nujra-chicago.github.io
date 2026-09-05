@@ -431,7 +431,15 @@ p {
 
 .search-box.resource-search input {
   width: auto;
-  flex: 1 1 220px;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 1rem;
+}
+
+.search-box > span,
+.select-box > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .select-box select {
@@ -470,6 +478,17 @@ p {
 
   .resource-result-count {
     margin-left: 0;
+  }
+
+  .search-box.resource-search,
+  .select-box {
+    display: grid;
+    grid-template-columns: 4.5em minmax(0, 1fr);
+  }
+
+  .select-box select {
+    min-width: 0;
+    font-size: 1rem;
   }
 }
 
@@ -551,7 +570,9 @@ p {
 
 .search-box.publication-search input {
   width: auto;
-  flex: 1 1 260px;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 1rem;
 }
 
 .publication-result-count {
@@ -1794,7 +1815,7 @@ body.home-page {
   background:
     linear-gradient(90deg, rgba(248, 250, 252, 0.72) 0%, rgba(248, 250, 252, 0.50) 38%, rgba(248, 250, 252, 0.18) 70%, rgba(248, 250, 252, 0.02) 100%),
     linear-gradient(180deg, rgba(15, 31, 58, 0.04) 0%, rgba(15, 31, 58, 0.00) 52%, rgba(15, 31, 58, 0.18) 100%),
-    url("../images/hero/chicago-skyline-hero.png");
+    url("../images/hero/chicago-skyline-hero.webp");
   background-size: cover;
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -1850,7 +1871,7 @@ body.home-page {
     border-radius: 0 0 24px 24px;
     background:
       linear-gradient(180deg, rgba(248, 250, 252, 0.74) 0%, rgba(248, 250, 252, 0.48) 58%, rgba(15, 31, 58, 0.22) 100%),
-      url("../images/hero/chicago-skyline-hero.png");
+      url("../images/hero/chicago-skyline-hero.webp");
     background-size: cover;
     background-position: left bottom;
   }
@@ -2278,12 +2299,7 @@ body.home-page {
 
 .home-update-list {
   display: grid;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: var(--shadow);
+  border-top: 1px solid var(--border);
 }
 
 .home-update-item {
@@ -2291,8 +2307,8 @@ body.home-page {
   grid-template-columns: 92px 104px minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
-  padding: 10px 12px;
-  border-radius: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
   transition: background 0.18s ease, transform 0.18s ease;
@@ -2324,9 +2340,7 @@ body.home-page {
 
 .update-title {
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
   font-weight: 700;
 }
 
@@ -2353,45 +2367,27 @@ body.home-page {
   }
 
   .home-update-item {
-    grid-template-columns: 82px minmax(0, 1fr) auto;
+    grid-template-columns: max-content minmax(0, 1fr) auto;
+    grid-template-areas: "date category badge" "title title title";
     gap: 8px 10px;
   }
 
   .home-update-item time {
-    grid-column: 1;
+    grid-area: date;
   }
 
   .update-category {
-    grid-column: 2;
+    grid-area: category;
   }
 
   .update-title {
-    grid-column: 1 / 3;
+    grid-area: title;
     white-space: normal;
     line-height: 1.55;
   }
 
   .new-badge {
-    grid-column: 3;
-    grid-row: 1 / 3;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-update-item {
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .home-update-item time,
-  .update-category,
-  .update-title {
-    grid-column: 1;
-  }
-
-  .new-badge {
-    grid-column: 2;
-    grid-row: 1 / 4;
-    align-self: center;
+    grid-area: badge;
   }
 }
 
@@ -2419,7 +2415,7 @@ body.home-page {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("../images/hero/chicago-skyline-hero.png");
+  background-image: url("../images/hero/chicago-skyline-hero.webp");
   background-size: cover;
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -2451,5 +2447,168 @@ body.home-page {
 @media (prefers-reduced-motion: reduce) {
   .home-page .hero-bg-layer {
     transition: none;
+  }
+}
+
+/* Compact navigation and readable mobile controls. */
+.publication-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 16px;
+}
+
+.publication-years a,
+.article-toc a {
+  color: var(--blue-2);
+  text-underline-offset: 4px;
+}
+
+.publication-years a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+}
+
+.publication-years [hidden],
+.publication-years[hidden] {
+  display: none;
+}
+
+.article-back-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.article-toc {
+  margin-top: 24px;
+  border-block: 1px solid var(--border);
+}
+
+.article-toc summary,
+.home-update-archive summary {
+  padding: 14px 0;
+  cursor: pointer;
+  color: var(--blue-2);
+  font-weight: 700;
+}
+
+.article-toc ol {
+  columns: 2;
+  column-gap: 40px;
+  padding-left: 24px;
+  margin: 0 0 16px;
+}
+
+.article-toc li {
+  break-inside: avoid;
+  padding: 6px 0;
+}
+
+.article-body h2 {
+  scroll-margin-top: calc(var(--fixed-header-height) + 20px);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--blue-2);
+  outline-offset: 4px;
+}
+
+.resource-controls,
+.publication-controls {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.section-soft {
+  border-radius: 0;
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: max(16px, calc((100vw - var(--max)) / 2 + 22px));
+  padding-right: max(16px, calc((100vw - var(--max)) / 2 + 22px));
+}
+
+.home-page .hero-home {
+  align-items: center;
+  gap: 40px;
+}
+
+.home-page .hero-home::before {
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.96), rgba(248, 250, 252, 0.84) 40%, rgba(248, 250, 252, 0.08) 85%);
+}
+
+.home-page .hero-content {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 12px 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.home-page .hero-card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 8px;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.home-page .hero-title-grid {
+  font-size: 40px;
+  font-weight: 750;
+  letter-spacing: 0;
+  column-gap: 0.04em;
+  line-height: 1.12;
+}
+
+.home-page .hero-title-grid .acronym-letter,
+.home-page .hero-title-grid .title-word {
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-shadow: none;
+}
+
+@media (max-width: 920px) {
+  .home-page .hero-home {
+    gap: 24px;
+  }
+
+  .home-page .hero-card {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .article-toc ol {
+    columns: 1;
+  }
+
+  .home-page .hero-title-grid {
+    font-size: 23px;
+  }
+
+  .home-page .hero-home::before {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(248, 250, 252, 0.86) 55%, rgba(248, 250, 252, 0.12));
+  }
+
+  .home-page .hero-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 359px) {
+  .home-page .hero-title-grid {
+    font-size: 20px;
   }
 }

@@ -18,6 +18,14 @@ Google Forms are used for admission, contact, and leave/unsubscribe forms.
 
 Hero image rotation is manually managed. New hero images must be uploaded to `images/hero/` and manually added to `HERO_IMAGES` in `js/main.js`.
 
+The rotation interval is 10 seconds. The homepage uses lightweight WebP copies of the PNG hero images; the original PNG files are retained.
+
+## Navigation and Updates
+
+Keep home update entries in `index.html`, newest first. The script shows the latest three and puts older entries in an expandable list. NEW badges expire after 14 days.
+
+Article contents links are generated from the existing `h2` headings. Publication year links are generated from the existing annual sections and follow the search results.
+
 ## Article Stats
 
 Resource article pages can show a like button and access counter.
