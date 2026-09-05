@@ -33,11 +33,11 @@ function escapeHtml(value) {
 
 
 const HERO_IMAGES = [
-  sitePath("images/hero/chicago-skyline-hero.png"),
+  sitePath("images/hero/chicago-skyline-hero.webp"),
   sitePath("images/hero/chicago-river-hero.avif"),
-  sitePath("images/hero/chicago-bean-hero.png"),
-  sitePath("images/hero/chicago-lakefront-hero.png"),
-  sitePath("images/hero/chicago-navy-pier-night-hero.png")
+  sitePath("images/hero/chicago-bean-hero.webp"),
+  sitePath("images/hero/chicago-lakefront-hero.webp"),
+  sitePath("images/hero/chicago-navy-pier-night-hero.webp")
 ];
 
 
@@ -89,9 +89,47 @@ function setupMobileMenu() {
   const nav = document.querySelector(".site-nav");
   if (!button || !nav) return;
 
-  button.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
+  const setOpen = isOpen => {
+    nav.classList.toggle("open", isOpen);
     button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+  };
+
+  button.addEventListener("click", () => setOpen(!nav.classList.contains("open")));
+  document.addEventListener("click", event => {
+    if (!nav.contains(event.target) && !button.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+  nav.addEventListener("click", event => {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  window.matchMedia("(max-width: 920px)").addEventListener("change", event => {
+    if (!event.matches) setOpen(false);
+  });
+}
+
+function initHomeUpdates() {
+  const list = document.querySelector(".home-update-list");
+  if (!list) return;
+  const olderItems = Array.from(list.children).slice(3);
+  if (!olderItems.length) return;
+
+  const archive = document.createElement("details");
+  archive.className = "home-update-archive";
+  const summary = document.createElement("summary");
+  summary.textContent = "過去の更新を表示";
+  const olderList = document.createElement("div");
+  olderList.className = "home-update-list";
+  olderList.append(...olderItems);
+  archive.append(summary, olderList);
+  list.after(archive);
+  archive.addEventListener("toggle", () => {
+    summary.textContent = archive.open ? "過去の更新を閉じる" : "過去の更新を表示";
   });
 }
 
@@ -143,8 +181,9 @@ function makeResourceCard(item) {
   `;
 
   if (item.url) {
+    const isExternal = new URL(item.url, window.location.href).origin !== window.location.origin;
     return `
-      <a class="resource-card resource-card-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
+      <a class="resource-card resource-card-link" href="${escapeHtml(item.url)}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>
         ${inner}
       </a>
     `;
@@ -355,6 +394,20 @@ function initPublicationsPage() {
     .filter(group => group.section && group.year && group.records.length);
 
   const totalCount = publicationSections.reduce((count, group) => count + group.records.length, 0);
+  const yearNav = document.createElement("nav");
+  yearNav.className = "publication-years";
+  yearNav.setAttribute("aria-label", "発表年から探す");
+  publicationSections.forEach(group => {
+    group.section.id ||= `publications-${group.year}`;
+    const link = document.createElement("a");
+    link.href = `#${group.section.id}`;
+    link.textContent = `${group.year}年`;
+    group.yearLink = link;
+    yearNav.append(link);
+  });
+  document.querySelector(".publication-controls").after(yearNav);
+  const hashSection = publicationSections.find(group => `#${group.section.id}` === window.location.hash);
+  if (hashSection) requestAnimationFrame(() => hashSection.section.scrollIntoView());
 
   const applyPublicationControls = () => {
     const query = searchInput.value.trim().toLocaleLowerCase("ja");
@@ -374,14 +427,57 @@ function initPublicationsPage() {
       });
 
       group.section.hidden = visibleInSection === 0;
+      group.yearLink.hidden = visibleInSection === 0;
     });
 
     resultCount.textContent = `${visibleCount}件 / ${totalCount}件`;
     empty.hidden = visibleCount > 0;
+    yearNav.hidden = visibleCount === 0;
   };
 
   searchInput.addEventListener("input", applyPublicationControls);
   applyPublicationControls();
+}
+
+function initArticleNavigation() {
+  const article = document.querySelector(".article-body");
+  const hero = document.querySelector(".article-hero");
+  if (!article || !hero) return;
+
+  const backLink = document.createElement("a");
+  backLink.className = "text-link article-back-link";
+  backLink.href = sitePath("resources.html");
+  backLink.textContent = "お役立ち情報一覧へ";
+  hero.prepend(backLink);
+
+  const headings = Array.from(article.querySelectorAll("h2"));
+  if (headings.length < 3) return;
+  const toc = document.createElement("details");
+  toc.className = "article-toc";
+  const summary = document.createElement("summary");
+  summary.textContent = "目次";
+  const nav = document.createElement("nav");
+  nav.setAttribute("aria-label", "この記事の目次");
+  const list = document.createElement("ol");
+  headings.forEach((heading, index) => {
+    if (!heading.id) {
+      let id = `article-section-${index + 1}`;
+      while (document.getElementById(id)) id += "-heading";
+      heading.id = id;
+    }
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent.trim();
+    item.append(link);
+    list.append(item);
+  });
+  nav.append(list);
+  toc.append(summary, nav);
+  hero.append(toc);
+
+  const hashTarget = headings.find(heading => `#${heading.id}` === window.location.hash);
+  if (hashTarget) requestAnimationFrame(() => hashTarget.scrollIntoView());
 }
 
 function loadJsonp(url, params) {
@@ -524,9 +620,11 @@ setupHeroRotation();
 setupMobileMenu();
 setupHeaderScrollState();
 initNewBadges();
+initHomeUpdates();
 initHome();
 initResourcesPage();
 initMembersIfPresent();
 initAlumniIfPresent();
 initPublicationsPage();
+initArticleNavigation();
 initArticleStats();
