@@ -2215,6 +2215,10 @@ body.home-page {
   margin-top: 8px;
 }
 
+.logo-showcase-text p {
+  text-align: left;
+}
+
 .logo-showcase-text p:last-child {
   color: var(--muted);
   font-size: 1.02rem;
